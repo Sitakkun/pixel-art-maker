@@ -1,12 +1,11 @@
 import React,{ useState } from 'react';
 
+//Propsの型定義
 type Props = {
     pixel: number
 }
 
 const csscolors = require('css-color-names');
-
-
 
 const PixelArt: React.VFC<Props> = ({ pixel }) => {
     const[currentColor,setCurrentColor] = useState("red");
@@ -14,6 +13,7 @@ const PixelArt: React.VFC<Props> = ({ pixel }) => {
 
     const table = [];
 
+    // PixelArtテーブル作成用の配列を生成する。
     for(let rowNum = 0; rowNum < pixel; rowNum++){
         const row:number[] = [];
         table.push(row)
@@ -22,6 +22,7 @@ const PixelArt: React.VFC<Props> = ({ pixel }) => {
         }
     }
 
+    // PixelArtテーブルのセルクリック時のハンドラー
     const clickPixcel = (event: React.MouseEvent<HTMLTableCellElement, MouseEvent>) => {
         const elem = document.getElementById(event.currentTarget.id);
         if(elem) {
@@ -30,16 +31,19 @@ const PixelArt: React.VFC<Props> = ({ pixel }) => {
         
     }
 
+    // カラーパレットクリック時のハンドラー
     const changeColor = (event: React.MouseEvent<HTMLTableCellElement, MouseEvent>) => {
         setCurrentColor(event.currentTarget.id);
     }
 
+    //PixelArtテーブルの<td>にIDを付与するために利用。
     const newID = () => {
         const id:string = "row" + lastID;
         lastID++;
         return id;
     }
 
+    //cssカラーの連想配列からカラーパレットを作成する。
     const createColorPallet = () => {
         let tds = [];
         const trs = [];
