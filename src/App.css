@@ -2,11 +2,6 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -15,17 +10,65 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: 10vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  margin: 0 auto;
+  width: 100%;
 }
 
 .App-link {
   color: #61dafb;
+}
+
+.table-container {
+  max-width: 500px;
+  max-height: 500px;
+  text-align: center;
+  margin: 50px auto;
+}
+
+.color-selector {
+  max-width: 500px;
+  max-height: 500px;
+  text-align: center;
+  margin: 20px auto;
+}
+
+.color-selector h2 {
+  margin: 0 auto;
+}
+
+.colorSelectorTable,
+#pixcelArtTable,
+.currentColorTable {
+  margin: 20px auto;
+}
+
+.changePixcel-container {
+  margin-top: 0px;
+  margin-bottom: 50px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+table {
+  border-collapse: collapse;
+  border: 1px solid #333;
+}
+
+td {
+  border: 1px solid #333;
+  width: 25px;
+  height: 25px;
+}
+
+td:hover {
+  border: 2px solid rgba(21, 255, 0, 0.836);
 }
 
 @keyframes App-logo-spin {
@@ -34,5 +77,16 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  td {
+    border: 1px solid #333;
+    width: 15px;
+    height: 15px;
+  }
+  td:hover {
+    border: 2px solid rgba(21, 255, 0, 0.836);
   }
 }
