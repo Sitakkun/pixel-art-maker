@@ -49,7 +49,6 @@ const PixelArt: React.VFC<Props> = ({ pixel }) => {
         const trs = [];
         let cnt:number = 0;
         for(let key in csscolors) {
-            console.log(tds);
             tds.push(<td id={key} style={{backgroundColor: key}} onClick={changeColor}></td>);
             cnt++;
             if(cnt === 16) {
@@ -58,7 +57,6 @@ const PixelArt: React.VFC<Props> = ({ pixel }) => {
                 cnt = 0;
             }
         }
-        console.log(trs)
         return trs;
     }
 
