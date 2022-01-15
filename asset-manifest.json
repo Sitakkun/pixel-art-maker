@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/pixel-art-maker/static/css/main.018a977a.css",
-    "main.js": "/pixel-art-maker/static/js/main.075aebb4.js",
+    "main.js": "/pixel-art-maker/static/js/main.d64c7218.js",
     "static/js/787.2036821f.chunk.js": "/pixel-art-maker/static/js/787.2036821f.chunk.js",
     "index.html": "/pixel-art-maker/index.html",
     "main.018a977a.css.map": "/pixel-art-maker/static/css/main.018a977a.css.map",
-    "main.075aebb4.js.map": "/pixel-art-maker/static/js/main.075aebb4.js.map",
+    "main.d64c7218.js.map": "/pixel-art-maker/static/js/main.d64c7218.js.map",
     "787.2036821f.chunk.js.map": "/pixel-art-maker/static/js/787.2036821f.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.018a977a.css",
-    "static/js/main.075aebb4.js"
+    "static/js/main.d64c7218.js"
   ]
 }
