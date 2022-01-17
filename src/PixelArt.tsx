@@ -62,6 +62,10 @@ const PixelArt: React.VFC<Props> = ({ pixel }) => {
     // input color から値を取得
     const changeColorFromInput = (event: React.ChangeEvent<HTMLInputElement>) => {
         setCurrentColor(event.target.value);
+    }
+
+    // input color のリストを更新
+    const changeColorPickerList = (event: React.ChangeEvent<HTMLInputElement>) => {
         const pickColorList = document.getElementById("color-list");
         const colorData = document.createElement("option");
         colorData.setAttribute("value",event.target.value);
@@ -123,7 +127,7 @@ const PixelArt: React.VFC<Props> = ({ pixel }) => {
                     </tr>
                 </tbody>
             </table>
-            <input type="color" name="colorPicker" list="color-list" onBlur={ changeColorFromInput }/>
+            <input type="color" name="colorPicker" list="color-list" onChange={ changeColorFromInput } onBlur={changeColorPickerList}/>
             <datalist id="color-list">
                 <option value="#ff0000"></option>
                 <option value="#00ff00"></option>
