@@ -34,7 +34,11 @@ const PixelArt: React.VFC<Props> = ({ pixel }) => {
     const[currentColor,setCurrentColor] = useState("red");
     let lastID = 0;
 
+    // テーブル生成用の配列
     const table = [];
+
+    // カラーピッカー記録用の配列
+    const colorPickerList:string[] = ["#ff0000","#00ff00","#0000ff"];
 
     // PixelArtテーブル作成用の配列を生成する。
     for(let rowNum = 0; rowNum < pixel; rowNum++){
@@ -66,10 +70,14 @@ const PixelArt: React.VFC<Props> = ({ pixel }) => {
 
     // input color のリストを更新
     const changeColorPickerList = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const pickedColor = event.target.value;
         const pickColorList = document.getElementById("color-list");
         const colorData = document.createElement("option");
-        colorData.setAttribute("value",event.target.value);
-        pickColorList?.appendChild(colorData);
+        if(!colorPickerList.includes(pickedColor)) {
+            colorData.setAttribute("value",pickedColor);
+            pickColorList?.appendChild(colorData);
+            colorPickerList.push(pickedColor)
+        }
     }
 
     //PixelArtテーブルの<td>にIDを付与するために利用。
@@ -132,7 +140,6 @@ const PixelArt: React.VFC<Props> = ({ pixel }) => {
                 <option value="#ff0000"></option>
                 <option value="#00ff00"></option>
                 <option value="#0000ff"></option>
-                <option value="red"></option>
             </datalist>
         </div>
         </>
